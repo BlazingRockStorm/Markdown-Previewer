@@ -3,17 +3,32 @@ import TextEnter from './text-enter';
 import TextResult from './text-result';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        textInput: ''
+    };
+  }
+
+  handleInputChange(event){
+      this.setState({
+          textInput: event.target.value
+      });
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-6 form-group">
             <h3>Enter text</h3>
-            <TextEnter />
+            <textarea className="form-control writing" onChange={this.handleInputChange.bind(this)} value={this.state.textInput} />
+            {/* <TextEnter /> */}
           </div>
           <div className="col-md-6">
             <h3>Result</h3>
-            <TextResult />
+            {/* <TextResult textInput={this.props.textInput}/> */}
+            <div>{this.state.textInput}</div>
           </div>
         </div>
       </div>

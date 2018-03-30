@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class TextResult extends React.Component {
     render(){
         return(
-            <div>Quân Gryqhon</div>
+            <div>{this.props.textInput}</div>
         );
     };
 }

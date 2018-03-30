@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TextEnter from './text-enter';
 import TextResult from './text-result';
 
 class App extends Component {
@@ -23,12 +22,10 @@ class App extends Component {
           <div className="col-md-6 form-group">
             <h3>Enter text</h3>
             <textarea className="form-control writing" onChange={this.handleInputChange.bind(this)} value={this.state.textInput} />
-            {/* <TextEnter /> */}
           </div>
           <div className="col-md-6">
             <h3>Result</h3>
-            {/* <TextResult textInput={this.props.textInput}/> */}
-            <div>{this.state.textInput}</div>
+            <TextResult textInput={this.state.textInput}/>
           </div>
         </div>
       </div>
